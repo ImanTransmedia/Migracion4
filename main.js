@@ -4,12 +4,12 @@ import { createChromaMaterial } from "./chroma-video.js";
 
 const THREE = window.MINDAR.IMAGE.THREE;
 
-document.addEventListener("DOMContentLoaded", () => {
-  const start = async () => {
-    const mindarThree = new window.MINDAR.IMAGE.MindARThree({
+document.addEventListener("DOMContentLoaded", async() => {
+  
+  const mindarThree = new window.MINDAR.IMAGE.MindARThree({
       container: document.body,
       imageTargetSrc:"Target/targets.mind",
-    
+  
     });
 
 
@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Volumen
     audio.setVolume(9.0);
     
-    const startButton = document.getElementById("startButton");
-    const infoText = document.getElementById("infoText");
+    //const startButton = document.getElementById("startButton");
+    //const infoText = document.getElementById("infoText");
 
     //Oculta o elimina el botón y el texto después de iniciar
-    startButton.style.display = "none";
-    infoText.style.display = "none";
+    //startButton.style.display = "none";
+    //infoText.style.display = "none";
 
     const videosData = [
       {
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   };
 
-  const startButton = document.createElement("button");
+  /*const startButton = document.createElement("button");
   startButton.textContent = "Empezar AR";
   startButton.id = "startButton";
   startButton.addEventListener("click", start);
@@ -109,5 +109,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const infoText = document.createElement("p");
   infoText.textContent = "Presiona 'Empezar AR' para comenzar";
   infoText.id = "infoText";
-  document.body.appendChild(infoText);
+  document.body.appendChild(infoText);*/
 });
