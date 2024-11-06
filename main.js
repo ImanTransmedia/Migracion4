@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
       })
     );
 
-    await mindarThree.start();
+    //await mindarThree.start();
 
     renderer.setAnimationLoop(() => {
       videos.forEach(({ video, plane }) => {});
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
       renderer.render(scene, camera);
     });
   };
-
+/*
   const startButton = document.createElement("button");
   startButton.textContent = "Empezar AR";
   startButton.id = "startButton";
@@ -109,5 +109,5 @@ document.addEventListener("DOMContentLoaded", () => {
   const infoText = document.createElement("p");
   infoText.textContent = "Presiona 'Empezar AR' para comenzar";
   infoText.id = "infoText";
-  document.body.appendChild(infoText);
+  document.body.appendChild(infoText);*/
 });
