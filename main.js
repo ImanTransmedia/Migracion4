@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //const startButton = document.getElementById("startButton");
     //const infoText = document.getElementById("infoText");
 
-    // Oculta o elimina el botón y el texto después de iniciar
+    //Oculta o elimina el botón y el texto después de iniciar
     //startButton.style.display = "none";
     //infoText.style.display = "none";
 
@@ -90,6 +90,8 @@ document.addEventListener("DOMContentLoaded", () => {
         return { video, plane };
       })
     );
+
+    mindarThree.start();
 
     //await mindarThree.start();
 
