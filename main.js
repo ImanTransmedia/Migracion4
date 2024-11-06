@@ -27,12 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
     // Volumen
     audio.setVolume(9.0);
     
-    const startButton = document.getElementById("startButton");
-    const infoText = document.getElementById("infoText");
+    //const startButton = document.getElementById("startButton");
+    //const infoText = document.getElementById("infoText");
 
     // Oculta o elimina el botón y el texto después de iniciar
-    startButton.style.display = "none";
-    infoText.style.display = "none";
+    //startButton.style.display = "none";
+    //infoText.style.display = "none";
 
     const videosData = [
       {
