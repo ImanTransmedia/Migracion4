@@ -1,6 +1,6 @@
 import { loadVideo } from "./loader.js";
 import { loadAudio } from "./loader.js";
-import { createChromaMaterial } from "./chroma-video.js";
+//import { createChromaMaterial } from "./chroma-video.js";
 
 const THREE = window.MINDAR.IMAGE.THREE;
 
@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const mindarThree = new window.MINDAR.IMAGE.MindARThree({
       container: document.body,
       imageTargetSrc:
-        "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/target-cr.mind?v=1701976017267",
+        "Target/targets.mind",
     
     });
 
@@ -39,26 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2000-MAIN.mp4?v=1702332451877",
         position: new THREE.Vector3(0, 0, 0),
       },
-      {
-        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2001-MAIN.mp4?v=1702332455111",
-        position: new THREE.Vector3(0, 0, 0.1),
-      },
-      {
-        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2002-MAIN.mp4?v=1702332455784",
-        position: new THREE.Vector3(0, 0, 0.2),
-      },
-      {
-        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2003-MAIN.mp4?v=1702332456514",
-        position: new THREE.Vector3(0, 0, 0.3),
-      },
-      {
-        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2004-MAIN.mp4?v=1702332457314",
-        position: new THREE.Vector3(0, 0, 0.4),
-      },
-      {
-        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2005-MAIN.mp4?v=1702332458527",
-        position: new THREE.Vector3(0, 0, 0.5),
-      },
+      //"https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/target-cr.mind?v=1701976017267",
     ];
 
     const videos = await Promise.all(
@@ -67,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const video = videoTexture.image;
 
         const geometry = new THREE.PlaneGeometry(1, 1080 / 1080);
-        const material = createChromaMaterial(videoTexture, 0x14ff09, 0.4, 0.2);
+        const material = (videoTexture);
         const plane = new THREE.Mesh(geometry, material);
         plane.rotation.x = 0;
         plane.position.copy(videoData.position);
