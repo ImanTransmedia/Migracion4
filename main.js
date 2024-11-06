@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", async() => {
 
       renderer.render(scene, camera);
     });
-  };
+
 
   /*const startButton = document.createElement("button");
   startButton.textContent = "Empezar AR";
