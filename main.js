@@ -8,11 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const start = async () => {
     const mindarThree = new window.MINDAR.IMAGE.MindARThree({
       container: document.body,
-      imageTargetSrc:
-        //"https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/target-cr.mind?v=1701976017267",
-        "Target/targets.mind",
+      imageTargetSrc:"Target/targets.mind",
     
     });
+//"https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/target-cr.mind?v=1701976017267",
 
     const { renderer, scene, camera } = mindarThree;
 
@@ -74,7 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
         plane.position.copy(videoData.position);
         plane.scale.multiplyScalar(0.5);
 
-        const anchor = mindarThree.addAnchor(0);
+        const anchor = mindarThree.addAnchor(1);
         anchor.group.add(plane);
         anchor.group.add(audio);
 
