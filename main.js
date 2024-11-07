@@ -163,7 +163,7 @@ await mindarThree.start();
 
     renderer.setAnimationLoop(() => {
       videos.forEach(({ video, plane }) => {});
-      videos1.forEach(({ video1, plane1 }) => {});
+      //videos1.forEach(({ video1, plane1 }) => {});
 
 
       renderer.render(scene, camera);
