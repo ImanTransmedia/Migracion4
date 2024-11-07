@@ -91,15 +91,15 @@ document.addEventListener("DOMContentLoaded", async() => {
     ];
 
     const videos1 = await Promise.all(
-      videosData1.map(async (videoData) => {
-        const videoTexture1 = await loadVideo(videoData.url);
+      videosData1.map(async (videoData1) => {
+        const videoTexture1 = await loadVideo(videoData1.url);
         const video = videoTexture1.image;
 
         const geometry = new THREE.PlaneGeometry(1, 1080 / 1080);
         const material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: videoTexture1 });
         const plane = new THREE.Mesh(geometry, material);
         plane.rotation.x = 0;
-        plane.position.copy(videoData.position);
+        plane.position.copy(videoData1.position);
         plane.scale.multiplyScalar(0.5);
 
         const anchor2 = mindarThree.addAnchor(2);
