@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", async() => {
 
     const videosData = [
       {
-        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2001-MAIN.mp4?v=1702332455111",
+        url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2004-MAIN.mp4?v=1702332457314",
         position: new THREE.Vector3(0, 0, 0.1),
       },
 
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", async() => {
   const material1 = new THREE.MeshBasicMaterial({color: 0x00ffff, transparent: true, opacity: 0.5});
   const plane1 = new THREE.Mesh (geometry1,material1);
   
-  anchor.group.add (plane1);
+  anchor1.group.add (plane1);
 
   
   //#endregion
