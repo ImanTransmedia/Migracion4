@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", async() => {
         plane.position.copy(videoData1.position);
         plane.scale.multiplyScalar(0.5);
 
-        const anchor2 = mindarThree.addAnchor(2);
+        const anchor2 = mindarThree.addAnchor(3);
         anchor2.group.add(plane);
         anchor2.group.add(audio1);
 
