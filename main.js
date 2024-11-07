@@ -66,11 +66,10 @@ document.addEventListener("DOMContentLoaded", async() => {
       })
     );
 
-    
-//#endregion
+    //#endregion Video
   
   
-  //#region Cubo
+//#region Plano
   
   const anchor1 = mindarThree.addAnchor(2);
 
@@ -80,8 +79,28 @@ document.addEventListener("DOMContentLoaded", async() => {
   
   anchor1.group.add (plane1);
 
-  
-  //#endregion
+  //#endregion Plano
+
+
+ //#region Textura
+    
+    const anchor2 = mindarThree.addAnchor(3);
+    // Carga la textura de la imagen
+    const textureLoader = new THREE.TextureLoader();
+    const texture = textureLoader.load('Graficas/1.png');
+
+    // Crea un material usando la textura
+    const material2 = new THREE.MeshBasicMaterial({ map: texture });
+
+    // Crea una geometría (por ejemplo, un plano)
+    const geometry2 = new THREE.PlaneGeometry(5, 5);
+
+    // Crea el mesh combinando la geometría y el material
+    const mesh2 = new THREE.Mesh(geometry2, material2);
+                             
+    anchor2.group.add (mesh2);
+
+    //#endregion Textura
 
 
 
