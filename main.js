@@ -92,11 +92,11 @@ document.addEventListener("DOMContentLoaded", async() => {
 
     const videos1 = await Promise.all(
       videosData.map(async (videoData) => {
-        const videoTexture = await loadVideo(videoData.url);
-        const video = videoTexture.image;
+        const videoTexture1 = await loadVideo(videoData.url);
+        const video = videoTexture1.image;
 
         const geometry = new THREE.PlaneGeometry(1, 1080 / 1080);
-        const material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: videoTexture });
+        const material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: videoTexture1 });
         const plane = new THREE.Mesh(geometry, material);
         plane.rotation.x = 0;
         plane.position.copy(videoData.position);
