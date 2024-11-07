@@ -104,16 +104,16 @@ document.addEventListener("DOMContentLoaded", async() => {
 
         const anchor2 = mindarThree.addAnchor(2);
         anchor2.group.add(plane);
-        anchor2.group.add(audio);
+        anchor2.group.add(audio1);
 
         anchor2.onTargetFound = () => {
           video.play();
-          audio.play();
+          audio1.play();
         };
 
         anchor2.onTargetLost = () => {
           video.pause();
-          audio.pause();
+          audio1.pause();
         };
 
         return { video, plane };
