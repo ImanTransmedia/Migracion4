@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", async() => {
     ];
 
     const videos1 = await Promise.all(
-      videosData.map(async (videoData) => {
+      videosData1.map(async (videoData) => {
         const videoTexture1 = await loadVideo(videoData.url);
         const video = videoTexture1.image;
 
