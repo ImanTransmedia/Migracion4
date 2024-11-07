@@ -123,58 +123,17 @@ document.addEventListener("DOMContentLoaded", async() => {
     //#endregion Video2
   
   
-//#region Video2
-    // Configuración del audio
-    const audioClip2 = await loadAudio(
-      "Videos/Test1.mp4"
-    );
-    const listener2 = new THREE.AudioListener(); 
-    camera.add(listener1);
-    const audio2 = new THREE.PositionalAudio(listener2);
-    audio2.setBuffer(audioClip2);
-    audio2.setRefDistance(100);
-    // Volumen
-    audio2.setVolume(9.0);
+//#region Plano
+  
+  const anchor3 = mindarThree.addAnchor(3);
 
-    const videosData2 = [
-      {
-        url: "Paisajes/animacion backgroud prop.gif",
-        position: new THREE.Vector3(0, 0, 0.1),
-      },
+  const geometry1 = new THREE.PlaneGeometry(1, 1);
+  const material1 = new THREE.MeshBasicMaterial({color: 0x00ffff, transparent: true, opacity: 0.5});
+  const plane1 = new THREE.Mesh (geometry1,material1);
+  
+  anchor3.group.add (plane1);
 
-    ];
-
-    const videos2 = await Promise.all(
-      videosData2.map(async (videoData2) => {
-        const videoTexture1 = await loadVideo(videoData2.url);
-        const video = videoTexture1.image;
-
-        const geometry = new THREE.PlaneGeometry(1, 1080 / 1080);
-        const material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: videoTexture1 });
-        const plane = new THREE.Mesh(geometry, material);
-        plane.rotation.x = 0;
-        plane.position.copy(videoData1.position);
-        plane.scale.multiplyScalar(0.5);
-
-        const anchor2 = mindarThree.addAnchor(2);
-        anchor2.group.add(plane);
-        anchor2.group.add(audio1);
-
-        anchor2.onTargetFound = () => {
-          video.play();
-          audio1.play();
-        };
-
-        anchor2.onTargetLost = () => {
-          video.pause();
-          audio1.pause();
-        };
-
-        return { video, plane };
-      })
-    );
-
-    //#endregion Video2
+  //#endregion Plano
 
 
  //#region Textura
@@ -211,4 +170,3 @@ await mindarThree.start();
     });
   
 });
-
