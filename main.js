@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", async() => {
 
     const videosData1 = [
       {
-        url: "Paisajes/animacion backgroud prop.gif",
+        url: "Videos/Test1.mp4",
         position: new THREE.Vector3(0, 0, 0.1),
       },
 
@@ -102,16 +102,16 @@ document.addEventListener("DOMContentLoaded", async() => {
         plane.position.copy(videoData.position);
         plane.scale.multiplyScalar(0.5);
 
-        const anchor = mindarThree.addAnchor(2);
-        anchor.group.add(plane);
-        anchor.group.add(audio);
+        const anchor2 = mindarThree.addAnchor(2);
+        anchor2.group.add(plane);
+        anchor2.group.add(audio);
 
-        anchor.onTargetFound = () => {
+        anchor2.onTargetFound = () => {
           video.play();
           audio.play();
         };
 
-        anchor.onTargetLost = () => {
+        anchor2.onTargetLost = () => {
           video.pause();
           audio.pause();
         };
@@ -125,20 +125,20 @@ document.addEventListener("DOMContentLoaded", async() => {
   
 //#region Plano
   
-  const anchor1 = mindarThree.addAnchor(3);
+  const anchor3 = mindarThree.addAnchor(3);
 
   const geometry1 = new THREE.PlaneGeometry(1, 1);
   const material1 = new THREE.MeshBasicMaterial({color: 0x00ffff, transparent: true, opacity: 0.5});
   const plane1 = new THREE.Mesh (geometry1,material1);
   
-  anchor1.group.add (plane1);
+  anchor3.group.add (plane1);
 
   //#endregion Plano
 
 
  //#region Textura
     
-    const anchor2 = mindarThree.addAnchor(4);
+    const anchor4 = mindarThree.addAnchor(4);
     // Carga la textura de la imagen
     const textureLoader = new THREE.TextureLoader();
     const texture = textureLoader.load('Graficas/1.png');
@@ -152,7 +152,7 @@ document.addEventListener("DOMContentLoaded", async() => {
     // Crea el mesh combinando la geometría y el material
     const mesh2 = new THREE.Mesh(geometry2, material2);
                              
-    anchor2.group.add (mesh2);
+    anchor4.group.add (mesh2);
 
     //#endregion Textura
 
