@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", async() => {
     const audioClip1 = await loadAudio(
       "Videos/Test1.mp4"
     );
-    listener1 = new THREE.AudioListener(); 
+    const listener1 = new THREE.AudioListener(); 
     camera.replace(listener1);
     const audio1 = new THREE.PositionalAudio(listener1);
     audio1.setBuffer(audioClip1);
