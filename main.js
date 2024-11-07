@@ -90,10 +90,10 @@ document.addEventListener("DOMContentLoaded", async() => {
     const texture = textureLoader.load('Graficas/1.png');
 
     // Crea un material usando la textura
-    const material2 = new THREE.MeshBasicMaterial({ map: texture });
+    const material2 = new THREE.MeshBasicMaterial({ color: 0xffffff, map: texture });
 
     // Crea una geometría (por ejemplo, un plano)
-    const geometry2 = new THREE.PlaneGeometry(5, 5);
+    const geometry2 = new THREE.PlaneGeometry(1, 1);
 
     // Crea el mesh combinando la geometría y el material
     const mesh2 = new THREE.Mesh(geometry2, material2);
