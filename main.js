@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", async() => {
 //#region Video2
     // Configuración del audio
     const audioClip1 = await loadAudio(
-      "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/AUDIO_CR_V1_2.mp3?v=1702306241238"
+      "Videos/Test1.mp4"
     );
     const listener1 = new THREE.AudioListener(); 
     camera.add(listener1);
