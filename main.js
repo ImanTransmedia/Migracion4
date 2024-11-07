@@ -12,6 +12,8 @@ document.addEventListener("DOMContentLoaded", async() => {
     imageTargetSrc: "Target/targets.mind"
   });
 
+  
+  //#region Video
     const { renderer, scene, camera } = mindarThree;
 
     // Configuración del audio
@@ -28,7 +30,6 @@ document.addEventListener("DOMContentLoaded", async() => {
 
     const videosData = [
       {
-
         url: "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/Ar%20Cr%20Plano%2001-MAIN.mp4?v=1702332455111",
         position: new THREE.Vector3(0, 0, 0.1),
       },
@@ -65,13 +66,32 @@ document.addEventListener("DOMContentLoaded", async() => {
       })
     );
 
-    await mindarThree.start();
+    
+//#endregion
+  
+  
+  //#region Cubo
+  
+  const anchor1 = mindarThree.addAnchor(2);
+
+  const geometry1 = new THREE.PlaneGeometry(1, 1);
+  const material1 = new THREE.MeshBasicMaterial({color: 0x00ffff, transparent: true, opacity: 0.5});
+  const plane1 = new THREE.Mesh (geometry1,material1);
+  
+  anchor.group.add (plane1);
+
+  
+  //#endregion
+
+
+
+//ejecutable  
+await mindarThree.start();
 
     renderer.setAnimationLoop(() => {
       videos.forEach(({ video, plane }) => {});
 
       renderer.render(scene, camera);
     });
-
-
+  
 });
