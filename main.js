@@ -91,32 +91,32 @@ document.addEventListener("DOMContentLoaded", async() => {
     ];
 
     const videos1 = await Promise.all(
-      videosData.map(async (videoData) => {
+      videosData1.map(async (videoData) => {
         const videoTexture1 = await loadVideo(videoData.url);
-        const video = videoTexture1.image;
+        const video1 = videoTexture1.image;
 
         const geometry = new THREE.PlaneGeometry(1, 1080 / 1080);
         const material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: videoTexture1 });
-        const plane = new THREE.Mesh(geometry, material);
-        plane.rotation.x = 0;
-        plane.position.copy(videoData.position);
-        plane.scale.multiplyScalar(0.5);
+        const plane1 = new THREE.Mesh(geometry, material);
+        plane1.rotation.x = 0;
+        plane1.position.copy(videoData.position);
+        plane1.scale.multiplyScalar(0.5);
 
         const anchor = mindarThree.addAnchor(2);
-        anchor.group.add(plane);
-        anchor.group.add(audio);
+        anchor.group.add(plane1);
+        anchor.group.add(audio1);
 
         anchor.onTargetFound = () => {
-          video.play();
-          audio.play();
+          video1.play();
+          audio1.play();
         };
 
         anchor.onTargetLost = () => {
-          video.pause();
-          audio.pause();
+          video1.pause();
+          audio1.pause();
         };
 
-        return { video, plane };
+        return { video1, plane1 };
       })
     );
 
@@ -129,9 +129,9 @@ document.addEventListener("DOMContentLoaded", async() => {
 
   const geometry1 = new THREE.PlaneGeometry(1, 1);
   const material1 = new THREE.MeshBasicMaterial({color: 0x00ffff, transparent: true, opacity: 0.5});
-  const plane1 = new THREE.Mesh (geometry1,material1);
+  const plane2 = new THREE.Mesh (geometry1,material1);
   
-  anchor1.group.add (plane1);
+  anchor1.group.add (plane2);
 
   //#endregion Plano
 
@@ -163,7 +163,7 @@ await mindarThree.start();
 
     renderer.setAnimationLoop(() => {
       videos.forEach(({ video, plane }) => {});
-      videos1.forEach(({ video, plane }) => {});
+      videos1.forEach(({ video1, plane1 }) => {});
 
 
       renderer.render(scene, camera);
