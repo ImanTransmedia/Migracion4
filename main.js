@@ -72,13 +72,13 @@ document.addEventListener("DOMContentLoaded", async() => {
   
   //#region Cubo
   
-  const anchor1 = mindarThree.addAnchor(2);
+  //const anchor1 = mindarThree.addAnchor(2);
 
-  const geometry1 = new THREE.PlaneGeometry(1, 1);
-  const material1 = new THREE.MeshBasicMaterial({color: 0x00ffff, transparent: true, opacity: 0.5});
-  const plane1 = new THREE.Mesh (geometry1,material1);
+  //const geometry1 = new THREE.PlaneGeometry(1, 1);
+  //const material1 = new THREE.MeshBasicMaterial({color: 0x00ffff, transparent: true, opacity: 0.5});
+  //const plane1 = new THREE.Mesh (geometry1,material1);
   
-  anchor.group.add (plane1);
+  //anchor.group.add (plane1);
 
   
   //#endregion
