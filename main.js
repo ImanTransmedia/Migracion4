@@ -138,7 +138,7 @@ document.addEventListener("DOMContentLoaded", async() => {
 
     const videosData2 = [
       {
-        url: "Paisajes/animacion backgroud prop.gif",
+        url: "Paisajes/animacion backgroud prop.mp4",
         position: new THREE.Vector3(0, 0, 0.1),
       },
 
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", async() => {
     const anchor4 = mindarThree.addAnchor(4);
     // Carga la textura de la imagen
     const textureLoader = new THREE.TextureLoader();
-    const texture = textureLoader.load('Graficas/1.png');
+    const texture = textureLoader.load('Paisajes/e9131c558bf94fc68be3baac3837b7f3.jpg');
 
     // Crea un material usando la textura
     const material2 = new THREE.MeshBasicMaterial({ color: 0xffffff, map: texture });
