@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", async() => {
 
     const videosData = [
       {
-        url: "personajes/animacion personaje prop2.mp4",
+        url: "personajes/Animacion Personajes prop.mp4",
         position: new THREE.Vector3(0, 0, 0.1),
       },
 
