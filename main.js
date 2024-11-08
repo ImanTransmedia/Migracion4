@@ -100,6 +100,47 @@ document.addEventListener("DOMContentLoaded", async() => {
 
     //#endregion
   
+//#region Video3
+
+    const videosData2 = [
+      {
+        url: "Paisajes/animacion backgroud prop 2.mp4",
+        position: new THREE.Vector3(0, 0, 0.1),
+      },
+
+    ];
+
+    const videos2 = await Promise.all(
+      videosData2.map(async (videoData2) => {
+        const videoTexture2 = await loadVideo(videoData2.url);
+        const video = videoTexture2.image;
+
+        const geometry = new THREE.PlaneGeometry(1, 1080 / 1080);
+        const material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: videoTexture2 });
+        const plane = new THREE.Mesh(geometry, material);
+        plane.rotation.x = 0;
+        plane.position.copy(videoData2.position);
+        plane.scale.multiplyScalar(0.5);
+
+        const anchor3 = mindarThree.addAnchor(3);
+        anchor3.group.add(plane);
+
+
+        anchor3.onTargetFound = () => {
+          video.play();
+
+        };
+
+        anchor3.onTargetLost = () => {
+          video.pause();
+
+        };
+
+        return { video, plane };
+      })
+    );
+
+    //#endregion
   
 
 
@@ -131,6 +172,7 @@ await mindarThree.start();
     renderer.setAnimationLoop(() => {
       videos.forEach(({ video, plane }) => {});
       videos1.forEach(({ video, plane }) => {});
+      videos2.forEach(({ video, plane }) => {});
       
 
       renderer.render(scene, camera);
