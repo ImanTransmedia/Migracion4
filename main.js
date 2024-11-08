@@ -16,17 +16,7 @@ document.addEventListener("DOMContentLoaded", async() => {
     const { renderer, scene, camera } = mindarThree;
 
 //#region Video
-    // Configuración del audio
-    const audioClip = await loadAudio(
-      "https://cdn.glitch.global/5b7a1209-5438-4fcd-96dc-ba81f0837a93/AUDIO_CR_V1_2.mp3?v=1702306241238"
-    );
-    const listener = new THREE.AudioListener(); 
-    camera.add(listener);
-    const audio = new THREE.PositionalAudio(listener);
-    audio.setBuffer(audioClip);
-    audio.setRefDistance(100);
-    // Volumen
-    audio.setVolume(9.0);
+    
 
     const videosData = [
       {
@@ -50,16 +40,16 @@ document.addEventListener("DOMContentLoaded", async() => {
 
         const anchor = mindarThree.addAnchor(1);
         anchor.group.add(plane);
-        anchor.group.add(audio);
+
 
         anchor.onTargetFound = () => {
           video.play();
-          audio.play();
+
         };
 
         anchor.onTargetLost = () => {
           video.pause();
-          audio.pause();
+
         };
 
         return { video, plane };
@@ -70,17 +60,7 @@ document.addEventListener("DOMContentLoaded", async() => {
 
 
 //#region Video2
-    // Configuración del audio
-    const audioClip1 = await loadAudio(
-      "Videos/Test1.mp4"
-    );
-    const listener1 = new THREE.AudioListener(); 
-    camera.add(listener1);
-    const audio1 = new THREE.PositionalAudio(listener1);
-    audio1.setBuffer(audioClip1);
-    audio1.setRefDistance(100);
-    // Volumen
-    audio1.setVolume(9.0);
+
 
     const videosData1 = [
       {
@@ -104,16 +84,16 @@ document.addEventListener("DOMContentLoaded", async() => {
 
         const anchor2 = mindarThree.addAnchor(2);
         anchor2.group.add(plane);
-        anchor2.group.add(audio1);
+
 
         anchor2.onTargetFound = () => {
           video.play();
-          audio1.play();
+
         };
 
         anchor2.onTargetLost = () => {
           video.pause();
-          audio1.pause();
+
         };
 
         return { video, plane };
