@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", async() => {
     const { renderer, scene, camera } = mindarThree;
 
 //#region Video
-    
 
     const videosData = [
       {
@@ -56,11 +55,10 @@ document.addEventListener("DOMContentLoaded", async() => {
       })
     );
 
-    //#endregion Video
+    //#endregion
 
 
 //#region Video2
-
 
     const videosData1 = [
       {
@@ -100,20 +98,50 @@ document.addEventListener("DOMContentLoaded", async() => {
       })
     );
 
-    //#endregion Video2
+    //#endregion
   
   
-//#region Plano
-  
-  const anchor3 = mindarThree.addAnchor(3);
+//#region Video3
 
-  const geometry1 = new THREE.PlaneGeometry(1, 1);
-  const material1 = new THREE.MeshBasicMaterial({color: 0x00ffff, transparent: true, opacity: 0.5});
-  const plane1 = new THREE.Mesh (geometry1,material1);
-  
-  anchor3.group.add (plane1);
+    const videosData2 = [
+      {
+        url: "personajes/Animacion Personajes prop.mp4",
+        position: new THREE.Vector3(0, 0, 0.1),
+      },
 
-  //#endregion Plano
+    ];
+
+    const videos2 = await Promise.all(
+      videosData2.map(async (videoData2) => {
+        const videoTexture2 = await loadVideo(videoData2.url);
+        const video = videoTexture2.image;
+
+        const geometry = new THREE.PlaneGeometry(1, 1080 / 1080);
+        const material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: videoTexture2 });
+        const plane = new THREE.Mesh(geometry, material);
+        plane.rotation.x = 0;
+        plane.position.copy(videoData1.position);
+        plane.scale.multiplyScalar(0.5);
+
+        const anchor2 = mindarThree.addAnchor(3);
+        anchor2.group.add(plane);
+
+
+        anchor2.onTargetFound = () => {
+          video.play();
+
+        };
+
+        anchor2.onTargetLost = () => {
+          video.pause();
+
+        };
+
+        return { video, plane };
+      })
+    );
+
+    //#endregion
 
 
  //#region Textura
@@ -134,7 +162,7 @@ document.addEventListener("DOMContentLoaded", async() => {
                              
     anchor4.group.add (mesh2);
 
-    //#endregion Textura
+    //#endregion
 
 
 
@@ -144,6 +172,7 @@ await mindarThree.start();
     renderer.setAnimationLoop(() => {
       videos.forEach(({ video, plane }) => {});
       videos1.forEach(({ video, plane }) => {});
+      videos2.forEach(({ video, plane }) => {});
 
 
       renderer.render(scene, camera);
