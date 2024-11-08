@@ -120,7 +120,7 @@ document.addEventListener("DOMContentLoaded", async() => {
         const material = new THREE.MeshBasicMaterial({ color: 0xffffff, map: videoTexture2 });
         const plane = new THREE.Mesh(geometry, material);
         plane.rotation.x = 0;
-        plane.position.copy(videoData1.position);
+        plane.position.copy(videoData2.position);
         plane.scale.multiplyScalar(0.5);
 
         const anchor2 = mindarThree.addAnchor(3);
